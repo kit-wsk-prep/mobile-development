@@ -12,21 +12,25 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="110dp"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="50dp"
         app:cardElevation="8dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/home"
         app:layout_constraintEnd_toStartOf="@+id/myfrance"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:contentDescription="@string/todo"
             android:scaleType="centerCrop"
-            android:src="@drawable/art_icon_la_tour_eiffel" />
+            android:src="@drawable/art_icon_la_tour_eiffel"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="123dp" />
+
 
     </androidx.cardview.widget.CardView>
 
@@ -34,15 +38,15 @@
         android:id="@+id/myfrance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
+        android:layout_marginEnd="72dp"
         android:text="@string/myfrance"
         android:textColor="@color/black"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/recyclerView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintVertical_bias="0.035" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -52,5 +56,73 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="224dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/home"
+        android:layout_width="224dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/button_background"
+        android:padding="4dp"
+        android:text="@string/home"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:icon="@drawable/icon_home_outline"
+        app:iconGravity="textStart"
+        app:iconPadding="11dp"
+        app:iconSize="30dp"
+        app:iconTint="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/recyclerView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myfrance"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/travel"
+        android:layout_width="224dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/button_background"
+        android:padding="4dp"
+        android:text="@string/travel"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:icon="@drawable/icon_map_outline"
+        app:iconGravity="textStart"
+        app:iconPadding="11dp"
+        app:iconSize="30dp"
+        app:iconTint="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/recyclerView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/home"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/account"
+        android:layout_width="224dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/button_background"
+        android:padding="4dp"
+        android:text="@string/account"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:icon="@drawable/icon_account_circle_outline"
+        app:iconGravity="textStart"
+        app:iconPadding="1dp"
+        app:iconSize="30dp"
+        app:iconTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/recyclerView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/home"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

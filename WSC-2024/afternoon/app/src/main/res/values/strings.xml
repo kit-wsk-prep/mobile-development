@@ -2,4 +2,7 @@
     <string name="app_name">afternoon</string>
     <string name="todo">TODO</string>
     <string name="myfrance">My\nFrance</string>
+    <string name="home">Home</string>
+    <string name="travel">Travel</string>
+    <string name="account">Account</string>
 </resources>
