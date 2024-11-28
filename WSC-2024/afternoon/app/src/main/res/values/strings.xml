@@ -5,4 +5,12 @@
     <string name="home">Home</string>
     <string name="travel">Travel</string>
     <string name="account">Account</string>
+    <string name="join_us_now">Join us now</string>
+    <string name="to_discover_more_sights_of_france">to discover more sights of France</string>
+    <string name="sign_in_up">Sign in/up</string>
+    <string name="name">Name</string>
+    <string name="example_example_eu">example@example.eu</string>
+    <string name="your_email_addres">Your email addres</string>
+    <string name="your_password">Your password</string>
+    <string name="read_user_agreement">READ USER AGREEMENT</string>
 </resources>
