@@ -156,6 +156,8 @@
             android:layout_height="115dp"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:gravity="center" />
 
     </LinearLayout>

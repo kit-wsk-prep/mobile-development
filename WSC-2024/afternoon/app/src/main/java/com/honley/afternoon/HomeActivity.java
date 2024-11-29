@@ -23,14 +23,18 @@ public class HomeActivity extends AppCompatActivity {
         String emailPreferences = sharedPreferences.getString("email", null);
         String passwordPreferences = sharedPreferences.getString("password", null);
 
-        if (emailPreferences.isEmpty() && passwordPreferences.isEmpty()) {
-            binding.account.setOnClickListener(v -> {
-                startActivity(new Intent(HomeActivity.this, HomeActivity.class));
-            });
-        } else {
-            binding.account.setOnClickListener(v -> {
-                startActivity(new Intent(HomeActivity.this, AccountActivity.class));
-            });
+        try {
+            if (emailPreferences.isEmpty() && passwordPreferences.isEmpty()) {
+                binding.account.setOnClickListener(v -> {
+                    startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                });
+            } else {
+                binding.account.setOnClickListener(v -> {
+                    startActivity(new Intent(HomeActivity.this, AccountActivity.class));
+                });
+            }
+        } catch (NullPointerException exception) {
+            startActivity(new Intent(HomeActivity.this, MainActivity.class));
         }
 
         binding.travel.setOnClickListener(v -> {

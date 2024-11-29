@@ -13,9 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.honley.afternoon.databinding.ActivityAccountBinding;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class AccountActivity extends AppCompatActivity {
     private ActivityAccountBinding binding;
 
+    @SuppressLint("DefaultLocale")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,5 +67,9 @@ public class AccountActivity extends AppCompatActivity {
                 startActivity(new Intent(AccountActivity.this, MainActivity.class));
             });
         }
+
+        Set<String> favourite = sharedPreferences.getStringSet("favourite", new HashSet<>());
+
+        binding.favorite.setText(String.format("%d", favourite.size()));
     }
 }
