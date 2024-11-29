@@ -13,4 +13,6 @@
     <string name="your_email_addres">Your email addres</string>
     <string name="your_password">Your password</string>
     <string name="read_user_agreement">READ USER AGREEMENT</string>
+    <string name="to_change_the_other_account">to change the other account</string>
+    <string name="sign_out">Sign out</string>
 </resources>

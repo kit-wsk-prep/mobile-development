@@ -23,6 +23,7 @@
 
         <activity android:name=".HomeActivity" />
         <activity android:name=".TravelActivity" />
+        <activity android:name=".AccountActivity" />
     </application>
 
 </manifest>

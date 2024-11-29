@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
+
         String email = binding.email.getText().toString();
         String password = binding.password.getText().toString();
 
@@ -57,9 +59,7 @@ public class MainActivity extends AppCompatActivity {
         binding.sign.setOnClickListener(v -> {
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                SharedPreferences sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
+            } else {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
                 editor.putString("email", email);
