@@ -87,7 +87,7 @@ public class TravelActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.dialog_place);
         dialog.setCancelable(true);
 
-        ImageView placeImage = dialog.findViewById(R.id.placeImgae);
+        ImageView placeImage = dialog.findViewById(R.id.placeImage);
         TextView placeText = dialog.findViewById(R.id.placeText);
         Button favorite = dialog.findViewById(R.id.favorite);
 
