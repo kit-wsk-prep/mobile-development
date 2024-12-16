@@ -1,4 +1,4 @@
-package com.example.moduleb1;
+package com.honley.wsc_2023;
 
 import org.junit.Test;
 

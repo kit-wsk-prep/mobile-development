@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "moduleb1"
+rootProject.name = "WSC-2023"
 include(":app")
  

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.moduleb1"
+    namespace = "com.honley.wsc_2023"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.moduleb1"
+        applicationId = "com.honley.wsc_2023"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -26,8 +26,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     buildFeatures {
