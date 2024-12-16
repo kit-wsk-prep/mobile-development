@@ -1,4 +1,4 @@
-package com.honley.moduleb1;
+package com.example.moduleb1;
 
 import org.junit.Test;
 
