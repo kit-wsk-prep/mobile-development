@@ -1,40 +1,33 @@
-package com.example.moduleb1;
+package com.example.moduleb1.Tickets;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.moduleb1.Events.EventsActivity;
+import com.example.moduleb1.MainActivity;
 import com.example.moduleb1.Records.RecordsActivity;
-import com.example.moduleb1.Tickets.TicketsActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.honley.wsc_2023.R;
-import com.honley.wsc_2023.databinding.ActivityMainBinding;
+import com.honley.wsc_2023.databinding.ActivityTicketsBinding;
 
-public class MainActivity extends AppCompatActivity {
-
-    private ActivityMainBinding binding;
+public class TicketsActivity extends AppCompatActivity {
+    private ActivityTicketsBinding binding;
 
     private DrawerLayout drawerLayout;
     private ImageView menuButton;
     private NavigationView navigationView;
 
-    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityTicketsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
-        binding.events.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, EventsActivity.class)));
 
         drawerLayout = findViewById(R.id.drawer_layout);
         menuButton = findViewById(R.id.menu);
@@ -44,13 +37,11 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.nav_home) {
-                startActivity(new Intent(MainActivity.this, MainActivity.class));
+                startActivity(new Intent(TicketsActivity.this, MainActivity.class));
             } else if (id == R.id.nav_events) {
-                startActivity(new Intent(MainActivity.this, EventsActivity.class));
+                startActivity(new Intent(TicketsActivity.this, EventsActivity.class));
             } else if (id == R.id.nav_tickets) {
-                startActivity(new Intent(MainActivity.this, TicketsActivity.class));
-            } else if (id == R.id.nav_records) {
-                startActivity(new Intent(MainActivity.this, RecordsActivity.class));
+                startActivity(new Intent(TicketsActivity.this, RecordsActivity.class));
             }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
