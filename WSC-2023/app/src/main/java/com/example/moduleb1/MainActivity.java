@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         binding.events.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, EventsActivity.class)));
+        binding.tickets.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, TicketsActivity.class)));
 
         drawerLayout = findViewById(R.id.drawer_layout);
         menuButton = findViewById(R.id.menu);

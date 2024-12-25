@@ -16,12 +16,42 @@
             android:id="@+id/menu"
             android:layout_width="53dp"
             android:layout_height="54dp"
+            android:contentDescription="@string/todo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.007"
             app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+
+        <Button
+            android:id="@+id/start_recording"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Recording"
+            app:layout_constraintTop_toBottomOf="@id/menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/stop_recording"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop Recording"
+            app:layout_constraintTop_toBottomOf="@id/start_recording"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/play_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="Play Recording"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/stop_recording" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
