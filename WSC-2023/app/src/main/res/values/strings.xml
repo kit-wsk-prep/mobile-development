@@ -8,4 +8,7 @@
     <string name="create_ticket">Create a new ticket</string>
     <string name="ticket_create">Ticket Create</string>
     <string name="input_your_name">Input your name</string>
+    <string name="ticket_image">Ticket Image</string>
+    <string name="ticket_name">Ticket Name</string>
+    <string name="events_text">Эвенты</string>
 </resources>

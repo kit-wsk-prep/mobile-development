@@ -41,7 +41,7 @@
             android:autofillHints=""
             android:ems="10"
             android:inputType="text"
-            android:text="@string/input_your_name"
+            android:hint="@string/input_your_name"
             app:layout_constraintBottom_toTopOf="@+id/image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -51,8 +51,8 @@
 
         <ImageButton
             android:id="@+id/image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginTop="48dp"
             android:layout_marginBottom="80dp"
             android:contentDescription="TODO"
@@ -83,7 +83,7 @@
             android:layout_width="53dp"
             android:layout_height="54dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

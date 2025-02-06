@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.moduleb1.Models.Event;
 import com.honley.wsc_2023.R;
 
 import java.util.List;

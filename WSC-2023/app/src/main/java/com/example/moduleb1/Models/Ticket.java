@@ -4,9 +4,12 @@ public class Ticket {
     private String name;
     private String imageUri;
 
-    public Ticket(String name, String imageUri) {
+    private String eventTitle;
+
+    public Ticket(String name, String imageUri, String eventTitle) {
         this.name = name;
         this.imageUri = imageUri;
+        this.eventTitle = eventTitle;
     }
 
     public String getName() {
@@ -15,5 +18,9 @@ public class Ticket {
 
     public String getImageUri() {
         return imageUri;
+    }
+
+    public String getEventTitle() {
+        return eventTitle;
     }
 }

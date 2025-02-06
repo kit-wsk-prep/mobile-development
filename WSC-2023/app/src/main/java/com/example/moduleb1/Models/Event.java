@@ -1,4 +1,4 @@
-package com.example.moduleb1.Events;
+package com.example.moduleb1.Models;
 
 import java.util.List;
 

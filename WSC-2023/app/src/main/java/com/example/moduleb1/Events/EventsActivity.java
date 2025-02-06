@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.moduleb1.MainActivity;
+import com.example.moduleb1.Models.Event;
 import com.example.moduleb1.Records.RecordsActivity;
 import com.example.moduleb1.Tickets.CreateTicket;
 import com.example.moduleb1.Tickets.TicketsActivity;

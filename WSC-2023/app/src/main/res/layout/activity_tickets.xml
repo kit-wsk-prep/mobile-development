@@ -47,6 +47,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ticketsText" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tickets_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/createTicket" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- NavigationView для бокового меню справа -->

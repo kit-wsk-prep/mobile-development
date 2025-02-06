@@ -2,8 +2,6 @@ package com.example.moduleb1.Tickets;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -20,8 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.moduleb1.Events.Event;
-import com.example.moduleb1.Events.EventAdapter;
+import com.example.moduleb1.Models.Event;
 import com.example.moduleb1.Events.EventsActivity;
 import com.example.moduleb1.MainActivity;
 import com.example.moduleb1.Models.TicketType;
@@ -29,7 +26,6 @@ import com.example.moduleb1.Records.RecordsActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.honley.wsc_2023.R;
 import com.honley.wsc_2023.databinding.ActivityCreateTicketBinding;
-import com.honley.wsc_2023.databinding.ActivityTicketsBinding;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -94,7 +90,6 @@ public class CreateTicket extends AppCompatActivity {
                 for (int j = 0; j < eventPicturesArray.length(); j++) {
                     eventPictures.add(eventPicturesArray.getString(j));
                 }
-
             }
         } catch (JSONException e) {
             throw new RuntimeException(e);
@@ -102,11 +97,12 @@ public class CreateTicket extends AppCompatActivity {
 
         Spinner spinner = findViewById(R.id.spinner);
 
+        // Изменяем адаптер, чтобы использовать eventTitle
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
                 Arrays.stream(TicketType.values())
-                        .map(TicketType::getDisplayName)
+                        .map(TicketType::getEventTitle) // Используем eventTitle
                         .collect(Collectors.toList())
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -115,16 +111,17 @@ public class CreateTicket extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String selectedTicketType = (String) parentView.getItemAtPosition(position);
-                TicketType selectedType = TicketType.fromString(selectedTicketType);
+                String selectedEventTitle = (String) parentView.getItemAtPosition(position);
+                TicketType selectedTicketType = TicketType.fromEventTitle(selectedEventTitle);
 
-                SharedPreferences sharedPreferences = getSharedPreferences("tickets", MODE_PRIVATE);
-                String savedTicketType = sharedPreferences.getString("selectedTicketType", null);
-                String savedEventTitle = sharedPreferences.getString("selectedEventTitle", null);
-
-                if (savedTicketType != null && savedEventTitle != null) {
-                    TicketType ticketType = TicketType.valueOf(savedTicketType);
-                    String eventTitle = savedEventTitle;
+                if (selectedTicketType != null) {
+                    // Теперь у нас есть выбранный TicketType
+                    // Можно работать с eventTitle и ticketType как нужно
+                    SharedPreferences sharedPreferences = getSharedPreferences("tickets", MODE_PRIVATE);
+                    sharedPreferences.edit()
+                            .putString("selectedTicketType", selectedTicketType.name())
+                            .putString("selectedEventTitle", selectedEventTitle)
+                            .apply();
                 }
             }
 
@@ -182,6 +179,7 @@ public class CreateTicket extends AppCompatActivity {
         editor.putString("tickets", new JSONArray(tickets).toString());
         editor.apply();
     }
+
     private final ActivityResultLauncher<String> pickImageLauncher = registerForActivityResult(
             new ActivityResultContracts.GetContent(),
             uri -> {
