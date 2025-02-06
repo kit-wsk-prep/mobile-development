@@ -22,6 +22,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.moduleb1.Events.EventsActivity;
 import com.example.moduleb1.MainActivity;
+import com.example.moduleb1.Tickets.CreateTicket;
 import com.example.moduleb1.Tickets.TicketsActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.honley.wsc_2023.R;
@@ -68,6 +69,8 @@ public class RecordsActivity extends AppCompatActivity {
                 startActivity(new Intent(RecordsActivity.this, EventsActivity.class));
             } else if (id == R.id.nav_tickets) {
                 startActivity(new Intent(RecordsActivity.this, TicketsActivity.class));
+            } else if (id == R.id.nav_create_tickets) {
+                startActivity(new Intent(RecordsActivity.this, CreateTicket.class));
             }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;

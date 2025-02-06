@@ -13,6 +13,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.moduleb1.Events.EventsActivity;
 import com.example.moduleb1.Records.RecordsActivity;
+import com.example.moduleb1.Tickets.CreateTicket;
 import com.example.moduleb1.Tickets.TicketsActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.honley.wsc_2023.R;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding.events.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, EventsActivity.class)));
         binding.tickets.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, TicketsActivity.class)));
+        binding.records.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, RecordsActivity.class)));
 
         drawerLayout = findViewById(R.id.drawer_layout);
         menuButton = findViewById(R.id.menu);
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, TicketsActivity.class));
             } else if (id == R.id.nav_records) {
                 startActivity(new Intent(MainActivity.this, RecordsActivity.class));
+            } else if (id == R.id.nav_create_tickets) {
+                startActivity(new Intent(MainActivity.this, CreateTicket.class));
             }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.moduleb1.MainActivity;
 import com.example.moduleb1.Records.RecordsActivity;
+import com.example.moduleb1.Tickets.CreateTicket;
 import com.example.moduleb1.Tickets.TicketsActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.honley.wsc_2023.R;
@@ -86,6 +87,8 @@ public class EventsActivity extends AppCompatActivity {
                 startActivity(new Intent(EventsActivity.this, TicketsActivity.class));
             } else if (id == R.id.nav_records) {
                 startActivity(new Intent(EventsActivity.this, RecordsActivity.class));
+            } else if (id == R.id.nav_create_tickets) {
+                startActivity(new Intent(EventsActivity.this, CreateTicket.class));
             }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;

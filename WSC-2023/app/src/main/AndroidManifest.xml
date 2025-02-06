@@ -29,6 +29,7 @@
         <activity android:name="com.example.moduleb1.Events.EventsActivity"/>
         <activity android:name="com.example.moduleb1.Tickets.TicketsActivity"/>
         <activity android:name="com.example.moduleb1.Records.RecordsActivity"/>
+        <activity android:name="com.example.moduleb1.Tickets.CreateTicket"/>
     </application>
 
 </manifest>
